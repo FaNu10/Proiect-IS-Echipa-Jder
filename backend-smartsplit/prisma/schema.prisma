@@ -1,0 +1,100 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider        = "prisma-client-js"
+
+}
+
+
+// 1. Tabelul Utilizatori
+model User {
+  id        String        @id @default(uuid())
+  name      String
+  email     String        @unique
+  password  String
+  role      String        @default("member")
+  bio       String?
+  avatarUrl String?
+  createdAt DateTime      @default(now())
+  
+  // Relatii
+  products     Product[]
+  expensesPaid Expense[]
+  splits       ExpenseSplit[]
+  groups       GroupMember[]
+}
+
+// 2. Tabelul Produse
+model Product {
+  id          String   @id @default(uuid())
+  title       String
+  category    String
+  brand       String
+  price       Float
+  size        String
+  condition   String
+  location    String
+  description String
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+
+  sellerId    String
+  seller      User     @relation(fields: [sellerId], references: [id])
+}
+
+// 3. Tabelul Grupuri
+model Group {
+  id        String        @id @default(uuid())
+  name      String
+  createdAt DateTime      @default(now())
+  
+  // Relatii
+  members   GroupMember[]
+  expenses  Expense[]
+}
+
+// 3. Tabelul de legatura intre Utilizatori si Grupuri (Membrii unui grup)
+model GroupMember {
+  userId    String
+  groupId   String
+  role      String        @default("member") // admin sau member
+
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  group     Group         @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@id([userId, groupId]) // Cheie primara compusa
+}
+
+// 4. Tabelul Cheltuieli
+model Expense {
+  id          String        @id @default(uuid())
+  description String
+  amount      Float
+  splitType   String        @default("equal") // equal sau exact
+  createdAt   DateTime      @default(now())
+  
+  // Cine a platit cheltuiala
+  paidById    String
+  paidBy      User          @relation(fields: [paidById], references: [id])
+  
+  // Din ce grup face parte cheltuiala
+  groupId     String
+  group       Group         @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  splits      ExpenseSplit[]
+}
+
+// 5. Tabelul pentru impartirea sumelor (Cine cat datoreaza din cheltuiala)
+model ExpenseSplit {
+  id        String   @id @default(uuid())
+  expenseId String
+  userId    String
+  amount    Float
+
+  expense   Expense  @relation(fields: [expenseId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id])
+}

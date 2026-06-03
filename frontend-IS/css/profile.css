@@ -1,0 +1,305 @@
+/* PROFILE PAGE */
+
+.profile-page {
+  min-height: 80vh;
+  padding: 60px 80px 80px;
+}
+
+/* Loading & error states */
+
+.profile-loading,
+.profile-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 16px;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid #e0e0e0;
+  border-top-color: #6bcb77;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── PROFILE HEADER CARD ─────────────────────────────────────────────────── */
+
+.profile-header-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  background: white;
+  border-radius: 30px;
+  padding: 48px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  margin-bottom: 50px;
+}
+
+/* Avatar column */
+
+.profile-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.profile-avatar-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #6bcb77;
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.profile-avatar-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f0f0f0;
+}
+
+.edit-photo-btn {
+  background: none;
+  border: none;
+  color: #6bcb77;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.edit-photo-btn:hover {
+  color: #57b864;
+}
+
+.edit-photo-btn:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Info column */
+
+.profile-header-info {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.profile-header-info h1 {
+  font-size: 32px;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+.seller-name-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.seller-name-row h1 {
+  margin-bottom: 0;
+}
+
+.profile-bio {
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+/* ── EDIT PROFILE FORM ───────────────────────────────────────────────────── */
+
+.profile-action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.edit-profile-btn {
+  background: none;
+  border: 2px solid #6bcb77;
+  color: #6bcb77;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-profile-btn:hover {
+  background: #6bcb77;
+  color: white;
+}
+
+.delete-account-btn {
+  background: none;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-account-btn:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.profile-edit-name {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.profile-edit-name:focus {
+  border-color: #6bcb77;
+}
+
+.profile-edit-bio {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #444;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s;
+  line-height: 1.6;
+}
+
+.profile-edit-bio:focus {
+  border-color: #6bcb77;
+}
+
+.bio-char-count {
+  font-size: 12px;
+  color: #aaa;
+  text-align: right;
+  margin: 4px 0 12px;
+}
+
+.profile-edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-profile-btn {
+  padding: 10px 24px;
+  background: #6bcb77;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.save-profile-btn:hover   { background: #58b866; }
+.save-profile-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.cancel-profile-btn {
+  padding: 10px 20px;
+  background: #f5f5f5;
+  color: #555;
+  border: none;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cancel-profile-btn:hover { background: #ebebeb; }
+
+.profile-save-error {
+  color: #d93025;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* ── LISTINGS SECTION ────────────────────────────────────────────────────── */
+
+.profile-listings-section {
+  margin-bottom: 60px;
+}
+
+.profile-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.profile-section-sub {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.product-img-placeholder {
+  width: 100%;
+  height: 320px;
+  background: #f0f0f0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .profile-header-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .profile-header-info {
+    padding-top: 0;
+  }
+
+  .profile-header-info h1 {
+    font-size: 24px;
+  }
+}

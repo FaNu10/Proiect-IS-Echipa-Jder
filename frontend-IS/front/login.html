@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login - LittleLoop</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- LOGIN PAGE -->
+
+    <section class="login-page">
+      <!-- LEFT SIDE -->
+
+      <div class="login-left">
+        <div class="login-overlay">
+          <h1>LittleLoop</h1>
+
+          <p>
+            Join our community of conscious fashion lovers and give clothes a
+            second life.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+
+      <div class="login-right">
+        <div class="login-box">
+          <h2>Welcome back</h2>
+
+          <p class="login-subtitle">Continue your sustainable journey</p>
+
+          <!-- FORM -->
+
+          <form class="login-form" novalidate>
+
+            <div class="input-group">
+              <label for="login-email">Email Address</label>
+              <input
+                type="email"
+                id="login-email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                aria-describedby="login-email-error"
+              />
+              <span class="field-error" id="login-email-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="input-group">
+              <label for="login-password">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                aria-describedby="login-password-error"
+              />
+              <span class="field-error" id="login-password-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <p class="auth-error" id="login-error" role="alert" aria-live="assertive"></p>
+
+            <button class="login-main-btn" id="login-btn" type="submit">Login →</button>
+
+          </form>
+
+          <!-- REGISTER -->
+
+          <div class="register-link">
+            <p>
+              New to LittleLoop?
+              <a href="register.html"> Create an account </a>
+            </p>
+          </div>
+
+          <!-- COMMUNITY -->
+
+          <div class="community-users">
+            <div class="avatars">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" />
+            </div>
+
+            <p>Joined by 12k+ sustainable shoppers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>

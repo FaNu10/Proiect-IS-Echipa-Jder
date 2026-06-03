@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sell Item - LittleLoop</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+      <a class="logo" href="index.html">LittleLoop</a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="favorites.html">My Favorites</a>
+        <a href="add-product.html">Sell</a>      </nav>
+
+      <div class="nav-buttons" id="nav-buttons">
+      </div>
+    </header>
+
+    <!-- ADD PRODUCT PAGE -->
+
+    <main class="add-product-page">
+      <section class="add-product-container">
+        <!-- LEFT SIDE -->
+
+        <div class="add-product-left">
+          <span class="small-badge"> Sell what they've outgrown </span>
+
+          <h1>Pass it on — let another child enjoy it.</h1>
+
+          <p>
+            List the clothes, toys, and gear your little one has outgrown,
+            and find them a new home with families just like yours.
+          </p>
+
+          <div class="tips-container">
+            <div class="tip-card">
+              <div class="tip-icon"></div>
+
+              <div>
+                <h3>Show it clearly</h3>
+
+                <p>Good photos help parents see exactly what their child is getting.</p>
+              </div>
+            </div>
+
+            <div class="tip-card">
+              <div class="tip-icon"></div>
+
+              <div>
+                <h3>Be specific about size & condition</h3>
+
+                <p>Parents rely on accurate sizing and honest condition notes.</p>
+              </div>
+            </div>
+
+            <div class="tip-card">
+              <div class="tip-icon"></div>
+
+              <div>
+                <h3>Give it a second life</h3>
+
+                <p>Keep quality kids' items in circulation and out of landfill.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+
+        <div class="add-product-right">
+          <form class="add-product-form">
+            <h2>Add New Product</h2>
+
+            <!-- SELL / DONATE TOGGLE -->
+            <div class="listing-type-toggle">
+              <button type="button" class="type-btn active" id="type-sell">Sell</button>
+              <button type="button" class="type-btn" id="type-donate">Donate</button>
+            </div>
+            <input type="hidden" name="isDonation" id="isDonation-input" value="false" />
+
+            <p class="form-subtitle" id="form-subtitle">
+              Complete the form below to publish your item.
+            </p>
+
+            <!-- PRODUCT TITLE -->
+
+            <div class="input-group">
+              <label> Product Title </label>
+
+              <input type="text" name="title" placeholder="Ex: Vintage Denim Jacket" />
+            </div>
+
+            <!-- CATEGORY -->
+
+            <div class="input-group">
+              <label> Category </label>
+
+              <select name="category">
+                <option value="">Select category</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Toys">Toys</option>
+                <option value="Pushchairs, carriers &amp; car seats">Pushchairs, carriers &amp; car seats</option>
+                <option value="Furniture &amp; decor">Furniture &amp; decor</option>
+                <option value="Bathing &amp; changing">Bathing &amp; changing</option>
+                <option value="Childproofing &amp; safety equipment">Childproofing &amp; safety equipment</option>
+                <option value="Health &amp; pregnancy">Health &amp; pregnancy</option>
+                <option value="Nursing &amp; feeding">Nursing &amp; feeding</option>
+                <option value="Sleep &amp; bedding">Sleep &amp; bedding</option>
+                <option value="School supplies">School supplies</option>
+                <option value="Other kids' items">Other kids' items</option>
+              </select>
+            </div>
+
+            <!-- BRAND -->
+
+            <div class="input-group">
+              <label> Brand </label>
+
+              <input type="text" name="brand" placeholder="Ex: Nike" />
+            </div>
+
+            <!-- PRICE (hidden for donations) -->
+
+            <div class="input-group" id="price-group">
+              <label> Price (€) </label>
+
+              <input type="number" name="price" placeholder="Ex: 35" />
+            </div>
+
+            <!-- SIZE -->
+
+            <div class="input-group">
+              <label> Size </label>
+
+              <select name="size">
+                <option value="">Select size</option>
+
+                <option>XS</option>
+
+                <option>S</option>
+
+                <option>M</option>
+
+                <option>L</option>
+
+                <option>XL</option>
+              </select>
+            </div>
+
+            <!-- CONDITION -->
+
+            <div class="input-group">
+              <label> Condition </label>
+
+              <select name="condition">
+                <option value="">Select condition</option>
+
+                <option>New</option>
+
+                <option>Very good</option>
+
+                <option>Good</option>
+
+                <option>Used</option>
+              </select>
+            </div>
+
+            <!-- LOCATION -->
+
+            <div class="input-group">
+              <label> Location </label>
+
+              <input type="text" name="location" placeholder="Ex: Oradea" />
+            </div>
+
+            <!-- DESCRIPTION -->
+
+            <div class="input-group">
+              <label> Description </label>
+
+              <textarea name="description" rows="5" placeholder="Describe your item..."></textarea>
+            </div>
+
+            <!-- IMAGE -->
+
+            <div class="input-group">
+              <label> Product Image </label>
+
+              <input type="file" name="images" id="image-file-input" accept="image/*" multiple style="display:none;" />
+              <div class="multi-upload-grid" id="multi-upload-grid">
+                <!-- previews injected here by JS -->
+                <div class="image-add-tile" id="image-add-tile">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="16"/>
+                    <line x1="8" y1="12" x2="16" y2="12"/>
+                  </svg>
+                  <span>Add photo</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="auth-error" id="product-error"></p>
+
+            <!-- BUTTON -->
+
+            <button class="publish-btn">Publish Product</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      <div class="footer-logo">LittleLoop</div>
+
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <p>© 2026 LittleLoop. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>
+

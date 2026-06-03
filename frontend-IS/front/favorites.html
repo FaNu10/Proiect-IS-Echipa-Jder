@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Favorites - LittleLoop</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <a class="logo" href="index.html">LittleLoop</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="favorites.html">My Favorites</a>
+        <a href="add-product.html">Sell</a>
+      </nav>
+      <div class="nav-buttons" id="nav-buttons"></div>
+    </header>
+
+    <!-- FAVORITES PAGE -->
+    <main class="favorites-page">
+
+      <!-- PAGE HEADER -->
+      <div class="favorites-header">
+        <h1>My Favorites</h1>
+        <p>All the products and sellers you've saved in one place.</p>
+      </div>
+
+      <!-- TABS -->
+      <div class="favorites-tabs">
+        <button class="fav-tab active" id="tab-products" data-tab="products">
+          <span class="fav-tab-icon">♥</span>
+          Products
+          <span class="fav-tab-count" id="count-products">0</span>
+        </button>
+        <button class="fav-tab" id="tab-members" data-tab="members">
+          <span class="fav-tab-icon">👤</span>
+          Members
+          <span class="fav-tab-count" id="count-members">0</span>
+        </button>
+      </div>
+
+      <!-- PRODUCTS PANEL -->
+      <div class="fav-panel" id="panel-products">
+        <div class="fav-empty" id="empty-products">
+          <div class="fav-empty-icon">♥</div>
+          <h3>No favorite products yet</h3>
+          <p>Browse products and tap the heart icon to save them here.</p>
+          <a href="index.html#filters"><button class="login-main-btn" style="max-width:200px;margin-top:8px;">Browse Products</button></a>
+        </div>
+        <div class="products-grid" id="fav-products-grid" style="display:none;"></div>
+      </div>
+
+      <!-- MEMBERS PANEL -->
+      <div class="fav-panel" id="panel-members" style="display:none;">
+        <div class="fav-empty" id="empty-members">
+          <div class="fav-empty-icon">👤</div>
+          <h3>No favorite members yet</h3>
+          <p>Visit a seller's profile and follow them to see them here.</p>
+          <a href="index.html#products"><button class="login-main-btn" style="max-width:200px;margin-top:8px;">Discover Sellers</button></a>
+        </div>
+        <div class="fav-members-grid" id="fav-members-grid" style="display:none;"></div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-logo">LittleLoop</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <p>© 2026 LittleLoop. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>
+

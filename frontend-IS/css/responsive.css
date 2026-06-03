@@ -1,0 +1,41 @@
+@media (max-width: 1000px) {
+  .hero,
+  .product-details-container,
+  .add-product-container,
+  .login-page {
+    flex-direction: column;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+
+  .hero,
+  .products-section,
+  .features,
+  .footer,
+  .product-details-page,
+  .add-product-page,
+  .profile-page {
+    padding: 40px 20px;
+  }
+
+  .filters-container {
+    flex-direction: column;
+  }
+
+  .profile-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .about-section,
+  .profile-products-section,
+  
+
+  .login-overlay h1 {
+    font-size: 45px;
+  }
+}

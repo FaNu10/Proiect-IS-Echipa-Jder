@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Profile - LittleLoop</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <a class="logo" href="index.html">LittleLoop</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="favorites.html">My Favorites</a>
+        <a href="add-product.html">Sell</a>      </nav>
+      <div class="nav-buttons" id="nav-buttons"></div>
+    </header>
+
+    <main class="profile-page">
+
+      <!-- LOADING -->
+      <div id="seller-loading" class="profile-loading">
+        <div class="loading-spinner"></div>
+        <p>Loading profile…</p>
+      </div>
+
+      <!-- ERROR -->
+      <div id="seller-error" class="profile-error-state" style="display:none;">
+        <p id="seller-error-msg">Seller not found.</p>
+        <a href="index.html"><button class="login-main-btn" style="max-width:160px;margin-top:16px;">Go Home</button></a>
+      </div>
+
+      <!-- CONTENT -->
+      <div id="seller-content" style="display:none;">
+
+        <!-- PROFILE HEADER CARD -->
+        <section class="profile-header-card">
+          <div class="profile-avatar-wrap">
+            <div class="profile-avatar-circle" id="seller-avatar-circle"></div>
+            <img class="profile-avatar-img" id="seller-avatar-img" src="" alt="Avatar" style="display:none;" />
+          </div>
+
+          <div class="profile-header-info">
+            <div class="seller-name-row">
+              <h1 id="seller-name"></h1>
+              <button class="seller-follow-btn" id="seller-follow-btn">Follow ♡</button>
+            </div>
+            <p class="profile-bio" id="seller-bio"></p>
+          </div>
+        </section>
+
+        <!-- LISTINGS -->
+        <section class="profile-listings-section">
+          <h2 class="profile-section-title" id="seller-listings-title">Listings</h2>
+          <p class="profile-section-sub" id="seller-listings-sub"></p>
+          <div id="seller-listings-loading" style="text-align:center;padding:40px;color:#999;">Loading listings…</div>
+          <div class="products-grid" id="seller-listings-grid" style="display:none;"></div>
+          <p id="seller-listings-empty" style="display:none;color:#999;text-align:center;padding:40px;">This seller has no listings yet.</p>
+        </section>
+
+
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-logo">LittleLoop</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+      <p>© 2026 LittleLoop. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>
+

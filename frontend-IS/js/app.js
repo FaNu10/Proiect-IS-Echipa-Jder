@@ -1,0 +1,25 @@
+import { initNavbar }       from "./navbar.js";
+import { initUI }           from "./ui.js";
+import { initLogin }        from "./auth/login.js";
+import { initRegister }     from "./auth/register.js";
+import { initProductList }  from "./products/list.js";
+import { initAddProduct }   from "./products/add.js";
+import { initProductDetail } from "./products/detail.js";
+import { initProfile }      from "./profile.js";
+import { initFavorites }    from "./favorites.js";
+import { initSeller }         from "./seller.js";
+import { initNotifications }  from "./notifications.js";
+import { initAdmin }          from "./admin.js";
+
+initNavbar();
+initUI();
+initLogin();
+initRegister();
+initProductList();
+initAddProduct();
+initProductDetail();
+initProfile();
+initFavorites();
+initSeller();
+initNotifications();
+initAdmin();

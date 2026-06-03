@@ -1,0 +1,184 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>html { scroll-behavior: smooth; }</style>
+
+    <title>LittleLoop</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+      <a class="logo" href="index.html">LittleLoop</a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="favorites.html">My Favorites</a>
+        <a href="add-product.html">Sell</a>
+      </nav>
+
+      <div class="nav-buttons" id="nav-buttons"></div>
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>
+          Good things grow<br />
+          when you share them.
+        </h1>
+
+        <p>Nothing but the best for our children.</p>
+
+        <div class="hero-buttons">
+          <button class="primary-btn">Start Shopping</button>
+
+          <button class="secondary-btn">Learn More</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <img src="../images/index_image.jpeg" alt="LittleLoop hero" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTERS -->
+
+    <section class="filters-section" id="filters">
+      <div class="filters-container">
+        <h2>Filters</h2>
+
+        <input
+          type="text"
+          id="filter-search"
+          placeholder="Search products..."
+        />
+
+        <select id="filter-category">
+          <option value="">All Categories</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Toys">Toys</option>
+          <option value="Pushchairs, carriers &amp; car seats">
+            Pushchairs, carriers &amp; car seats
+          </option>
+          <option value="Furniture &amp; decor">Furniture &amp; decor</option>
+          <option value="Bathing &amp; changing">Bathing &amp; changing</option>
+          <option value="Childproofing &amp; safety equipment">
+            Childproofing &amp; safety equipment
+          </option>
+          <option value="Health &amp; pregnancy">Health &amp; pregnancy</option>
+          <option value="Nursing &amp; feeding">Nursing &amp; feeding</option>
+          <option value="Sleep &amp; bedding">Sleep &amp; bedding</option>
+          <option value="School supplies">School supplies</option>
+          <option value="Other kids' items">Other kids' items</option>
+        </select>
+
+        <select id="filter-location">
+          <option value="">All Locations</option>
+          <option value="Bucharest">Bucharest</option>
+          <option value="Cluj">Cluj</option>
+          <option value="Oradea">Oradea</option>
+          <option value="Timisoara">Timisoara</option>
+          <option value="Iasi">Iasi</option>
+        </select>
+
+        <button class="filter-btn" id="filter-btn">Apply Filters</button>
+        <button
+          class="clear-filter-btn"
+          id="clear-filter-btn"
+          title="Clear filters"
+        >
+          ✕
+        </button>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="products-section" id="products">
+      <div class="products-header">
+        <h2>Explore Curated Items</h2>
+
+        <p>Discover amazing second-hand fashion products</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Products loaded dynamically from database -->
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features">
+      <div class="feature-card">
+        <div class="circle green"></div>
+
+        <h3>Sustainable</h3>
+
+        <p>Reduce fashion waste and support eco-friendly shopping.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="circle blue"></div>
+
+        <h3>Affordable</h3>
+
+        <p>Find premium clothes at accessible prices.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="circle yellow"></div>
+
+        <h3>Community</h3>
+
+        <p>Connect with local fashion lovers and sellers.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      <div class="footer-logo">LittleLoop</div>
+
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <p>© 2026 LittleLoop. All rights reserved.</p>
+    </footer>
+
+    <!-- LEARN MORE MODAL -->
+    <div class="learn-more-overlay" id="learn-more-overlay" style="display:none;">
+      <div class="learn-more-modal">
+        <button class="learn-more-close" id="learn-more-close">✕</button>
+        <h2>About LittleLoop</h2>
+        <div class="learn-more-body">
+          <p><strong>LittleLoop</strong> is a marketplace built for families — a place to buy, sell, and donate the children's items your little ones have outgrown.</p>
+          <p>Kids grow fast. Clothes, toys, and gear are often barely used before they're too small. Instead of letting them collect dust, LittleLoop helps you pass them on to another family who will love them just as much.</p>
+          <p><strong>Sell</strong> items your child has outgrown and earn a little back. <strong>Donate</strong> items for free and give them a second life with a family that needs them.</p>
+          <p>Every listing helps reduce waste, saves money for families, and keeps quality children's products in circulation — rather than in landfill.</p>
+          <p>Join our growing community of parents making smarter, kinder choices for their kids and the planet.</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../js/app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E '\\\\.\\(json|yaml|yml|env|ts|js|sql\\)$|README|Dockerfile|docker-compose')",
+      "Bash(grep -E '\\\\.\\(json|yaml|yml|env|ts|js|vue|html\\)$|README|Dockerfile|docker-compose')",
+      "Bash(Get-ChildItem -Recurse \"D:\\\\Faculta\\\\Anul_3\\\\sem_2\\\\IS\\\\proiect\\\\frontend-IS\")",
+      "Bash(Select-Object FullName)",
+      "Bash(npx prisma *)"
+    ]
+  }
+}
